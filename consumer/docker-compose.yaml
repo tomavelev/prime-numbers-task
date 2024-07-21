@@ -1,0 +1,38 @@
+version: '3.1'
+services:
+
+#uncomment the this service - if you want the rabbit mq inter-micro-service communication
+#  rabbitmq:
+#    image: rabbitmq:3-management
+#    ports:
+#      - "5672:5672"
+#      - "15672:15672"
+
+  producer:
+    image: producer-service
+    build:
+      context: ../producer
+    environment:
+      "consumer.endpoint" : http://consumer:8081/consume
+      "spring.rabbitmq.host" : rabbitmq
+      "csv.rootDirectory" : /tmp/csv
+#    depends_on:
+#      - rabbitmq
+    volumes:
+      - ./csv:/tmp/csv
+    ports:
+      - "8080:8080"
+  consumer:
+    image: consumer-service
+    build:
+      context: .
+    environment:
+      "spring.rabbitmq.host" : rabbitmq
+      "csv.rootDirectory" : /tmp/csv
+
+#    depends_on:
+#      - rabbitmq
+    volumes:
+      - ./csv:/tmp/csv
+    ports:
+      - "8081:8081"
