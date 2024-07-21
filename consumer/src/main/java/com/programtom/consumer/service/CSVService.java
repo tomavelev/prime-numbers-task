@@ -25,6 +25,7 @@ public class CSVService {
 
     public void writeNumbers(RandomNumberBatch randomNumberBatch) {
 
+        //noinspection StringBufferReplaceableByString
         String fileName = new StringBuilder().append(randomNumberBatch.fileName()).append("_").append(suffix).append(".csv").toString();
         try (FileWriter fileWriter = new FileWriter(new File(rootDirectory, fileName), StandardCharsets.UTF_8)) {
             fileWriter.write((randomNumberBatch.numbers().stream())

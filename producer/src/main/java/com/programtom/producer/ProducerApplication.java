@@ -1,6 +1,5 @@
 package com.programtom.producer;
 
-import com.programtom.producer.service.RandomNumberGeneratorWrapperService;
 import org.springframework.beans.BeansException;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

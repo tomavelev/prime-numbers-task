@@ -17,6 +17,7 @@ import org.springframework.web.client.RestTemplate;
  * <p>
  * Because there are two implementations now - it requires a @Primary annotation.
  */
+@SuppressWarnings("unused")
 @Primary
 @Service
 public class RestNumberCommunicationService implements NumberCommunication {

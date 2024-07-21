@@ -13,11 +13,10 @@ public class ProduceController {
 
     /**
      * If external activation of random number generation is chosen - you could start the process from here.
-     *
      * If you choose to not expose it - this code is not needed
      */
     @GetMapping("generate")
-    public void generate(){
+    public void generate() {
         randomNumberGeneratorWrapperService.generateAndSendRandomNumbers();
     }
 

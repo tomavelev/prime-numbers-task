@@ -8,7 +8,7 @@ import com.programtom.common.models.RandomNumberBatch;
 public interface NumberCommunication {
     /**
      * Send Numbers to the consumer microservice
-     * @param randomNumberBatch
+     * @param randomNumberBatch - a named stream of numbers
      */
     void send(RandomNumberBatch randomNumberBatch);
 }

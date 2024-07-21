@@ -8,11 +8,13 @@ import org.springframework.stereotype.Service;
 /**
  * Rabbit MQ implementation of the inter-microservice communication.
  */
+@SuppressWarnings("unused")
 @Service
 public class RabbitMQNumberCommunicationService implements NumberCommunication {
 
     private final RabbitTemplate rabbitTemplate;
 
+    @SuppressWarnings("unused")
     public RabbitMQNumberCommunicationService(RabbitTemplate pRabbitTemplate) {
         rabbitTemplate = pRabbitTemplate;
     }

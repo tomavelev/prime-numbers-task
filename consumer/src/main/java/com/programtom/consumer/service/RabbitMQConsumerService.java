@@ -13,6 +13,7 @@ public class RabbitMQConsumerService {
 //Uncomment - This would be needed for RabbitMQ variant - for Inter - Micro Service Communication
 
 //    @RabbitListener(queues = RabbitMQConfig.QUEUE_NAME)
+    @SuppressWarnings("unused")
     public void consumeNumbers(RandomNumberBatch randomNumberBatch) {
         batchNumberService.consumeNumbers(randomNumberBatch);
     }
